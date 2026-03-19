@@ -1,0 +1,98 @@
+Started by user Yograj Sikka
+
+Obtained Jenkinsfile from git file:///Users/yograj/jenkins-pipeline-repo
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins
+ in /Users/yograj/.jenkins/workspace/SIT223 - Pipeline
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+Cloning the remote Git repository
+Cloning repository file:///Users/yograj/jenkins-pipeline-repo
+ > git init /Users/yograj/.jenkins/workspace/SIT223 - Pipeline # timeout=10
+Fetching upstream changes from file:///Users/yograj/jenkins-pipeline-repo
+ > git --version # timeout=10
+ > git --version # 'git version 2.50.1 (Apple Git-155)'
+ > git fetch --tags --force --progress -- file:///Users/yograj/jenkins-pipeline-repo +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url file:///Users/yograj/jenkins-pipeline-repo # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 36907c3534edbce68b356b6c6ff0fb2ef7010205 (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 36907c3534edbce68b356b6c6ff0fb2ef7010205 # timeout=10
+Commit message: "Add Jenkinsfile for SIT task - 6-stage pipeline"
+First time build. Skipping changelog.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] echo
+Fetch the source code from the directory path specified by the environment variable
+[Pipeline] echo
+Directory path: /Users/yograj/projects/sample
+[Pipeline] echo
+Compile the code and generate any necessary artefacts
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] echo
+Unit tests
+[Pipeline] echo
+Integration tests
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Code Quality Check)
+[Pipeline] echo
+Check the quality of the code
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy)
+[Pipeline] echo
+Deploy the application to a testing environment specified by the environment variable
+[Pipeline] echo
+Testing environment: staging
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Approval)
+[Pipeline] echo
+Waiting for manual approval (simulated sleep)
+[Pipeline] sleep
+Sleeping for 10 sec
+[Pipeline] echo
+Approval wait complete
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy to Production)
+[Pipeline] echo
+Deploy the application to production environment: yogesh
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] echo
+Pipeline finished with current build status: SUCCESS
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
